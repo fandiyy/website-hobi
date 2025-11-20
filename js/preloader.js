@@ -1,18 +1,4 @@
-// Preloader Words Data
-const preloaderWords = [
-  'Hello',
-  'Halo',
-  'Bonjour',
-  'Ciao',
-  'Olà',
-  'سلام',
-  'やあ',
-  'Hallå',
-  'Guten tag',
-  'Welcome to Fandi-tech'
-];
-
-// Create Preloader HTML
+// Create Preloader HTML with Loading Circle Animation
 function createPreloader() {
   const preloaderHTML = `
     <div id="preloader" class="preloader-container">
@@ -23,13 +9,13 @@ function createPreloader() {
           left: 0;
           width: 100%;
           height: 100%;
-          background: #000;
+          background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
           display: flex;
           align-items: center;
           justify-content: center;
           z-index: 9999;
           flex-direction: column;
-          gap: 30px;
+          gap: 40px;
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           opacity: 1;
           transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -38,289 +24,303 @@ function createPreloader() {
         .preloader-container.fade-out {
           opacity: 0;
           pointer-events: none;
-          transform: translateY(-100px);
-          animation: slideUpFadeOut 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation: fadeOutPreloader 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
-        @keyframes slideUpFadeOut {
+        @keyframes fadeOutPreloader {
           0% {
             opacity: 1;
-            transform: translateY(0);
           }
           100% {
             opacity: 0;
-            transform: translateY(-100px);
           }
         }
 
-        .preloader-content {
+        .loading-circle {
+          width: 80px;
+          height: 80px;
+          position: relative;
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 20px;
-          font-size: 36px;
-          font-weight: 700;
-          color: #fff;
-          min-height: 60px;
         }
 
-        .preloader-dot {
-          width: 14px;
-          height: 14px;
-          background: #C1FF72;
-          border-radius: 50%;
-          animation: dotPulse 1.4s ease-in-out infinite;
-          flex-shrink: 0;
-        }
-
-        .preloader-word {
-          min-width: 250px;
-          text-align: center;
-          height: 45px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-weight: 600;
-          letter-spacing: 0.5px;
-        }
-
-        .preloader-progress-container {
+        .circle-ring {
+          position: absolute;
           width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 12px;
-        }
-
-        .preloader-progress {
-          width: 320px;
-          height: 4px;
-          background: rgba(255, 255, 255, 0.15);
-          border-radius: 10px;
-          overflow: hidden;
-          box-shadow: none;
-        }
-
-        .preloader-progress-bar {
           height: 100%;
-          background: #C1FF72;
-          border-radius: 10px;
-          box-shadow: none;
-          width: 0%;
-          transition: width 0.1s linear;
+          border: 4px solid transparent;
+          border-top-color: #1f3a93;
+          border-right-color: #ff6b35;
+          border-radius: 50%;
+          animation: spin 2s linear infinite;
         }
 
-        .preloader-percentage {
-          font-size: 12px;
-          color: rgba(255, 255, 255, 0.6);
-          font-weight: 500;
-          letter-spacing: 1px;
+        .circle-ring:nth-child(2) {
+          width: 60px;
+          height: 60px;
+          top: 10px;
+          left: 10px;
+          border-top-color: #ff6b35;
+          border-right-color: #1f3a93;
+          animation: spin 2s linear infinite reverse;
         }
 
-        @keyframes dotPulse {
+        .circle-dot {
+          width: 12px;
+          height: 12px;
+          background: #1f3a93;
+          border-radius: 50%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+
+        @keyframes pulse {
           0%, 100% {
-            opacity: 0.4;
-            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(31, 58, 147, 0.7);
           }
           50% {
-            opacity: 1;
-            transform: scale(1.3);
+            box-shadow: 0 0 0 8px rgba(31, 58, 147, 0);
+          }
+        }
+
+        .loading-text {
+          font-size: 18px;
+          font-weight: 600;
+          color: #ffffff;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+        }
+
+        .loading-text::after {
+          content: '';
+          animation: dotAnimation 1.5s steps(4, end) infinite;
+        }
+
+        @keyframes dotAnimation {
+          0%, 20% {
+            content: '';
+          }
+          40% {
+            content: '.';
+          }
+          60% {
+            content: '..';
+          }
+          80%, 100% {
+            content: '...';
           }
         }
 
         @media (max-width: 768px) {
-          .preloader-content {
-            font-size: 28px;
-            gap: 15px;
+          .loading-circle {
+            width: 70px;
+            height: 70px;
           }
 
-          .preloader-word {
-            min-width: 180px;
-            font-size: 24px;
+          .circle-ring {
+            border-width: 3px;
           }
 
-          .preloader-progress {
-            width: 250px;
+          .circle-ring:nth-child(2) {
+            width: 50px;
+            height: 50px;
+            top: 10px;
+            left: 10px;
           }
 
-          .preloader-dot {
-            width: 12px;
-            height: 12px;
+          .loading-text {
+            font-size: 16px;
           }
         }
 
         @media (max-width: 480px) {
-          .preloader-content {
-            font-size: 24px;
-            gap: 12px;
+          .preloader-container {
+            gap: 30px;
           }
 
-          .preloader-word {
-            min-width: 150px;
-            font-size: 20px;
+          .loading-circle {
+            width: 60px;
+            height: 60px;
           }
 
-          .preloader-progress {
-            width: 200px;
+          .circle-ring {
+            border-width: 3px;
+          }
+
+          .circle-ring:nth-child(2) {
+            width: 42px;
+            height: 42px;
+            top: 9px;
+            left: 9px;
+          }
+
+          .loading-text {
+            font-size: 14px;
           }
         }
       </style>
-      <div class="preloader-content">
-        <span class="preloader-dot"></span>
-        <span class="preloader-word" id="preloader-word">Hello</span>
+      <div class="loading-circle">
+        <div class="circle-ring"></div>
+        <div class="circle-ring"></div>
+        <div class="circle-dot"></div>
       </div>
-      <div class="preloader-progress-container">
-        <div class="preloader-progress">
-          <div class="preloader-progress-bar" id="preloader-progress-bar"></div>
-        </div>
-        <span class="preloader-percentage" id="preloader-percentage">0%</span>
-      </div>
+      <div class="loading-text">Memuat</div>
     </div>
   `;
 
   document.body.insertAdjacentHTML('afterbegin', preloaderHTML);
 }
 
+// Global state untuk preloader
+let preloaderState = {
+  isVisible: false,
+  isRemoving: false,
+  hideTimeout: null
+};
+
 // Initialize Preloader
 function initPreloader() {
-  createPreloader();
-
-  const preloaderElement = document.getElementById('preloader');
-  const wordElement = document.getElementById('preloader-word');
-  const percentageElement = document.getElementById('preloader-percentage');
-  const progressBarElement = document.getElementById('preloader-progress-bar');
+  // Jika preloader sudah ada, gunakan yang lama
+  let preloaderElement = document.getElementById('preloader');
   
-  let currentWordIndex = 0;
-  let isRemoving = false;
-  let hasUserInteracted = false;
-  
-  // Total duration calculation based on word changes
-  // First word: 500ms, then each word: 250ms
-  // Total: 500 + (9 * 250) = 500 + 2250 = 2750ms (~2.75 seconds)
-  const firstWordDuration = 500;
-  const otherWordDuration = 250;
-  const totalWords = preloaderWords.length;
-  const totalPreloaderDuration = firstWordDuration + ((totalWords - 1) * otherWordDuration);
-  
-  // Update progress and word based on time
-  function updatePreloaderState() {
-    if (isRemoving || hasUserInteracted) return;
-    
-    const elapsedTime = Date.now() - startTime;
-    
-    // Calculate which word should be displayed
-    let calculatedIndex = 0;
-    let timeTracker = 0;
-    
-    for (let i = 0; i < totalWords; i++) {
-      const wordDuration = i === 0 ? firstWordDuration : otherWordDuration;
-      if (elapsedTime < timeTracker + wordDuration) {
-        calculatedIndex = i;
-        break;
-      }
-      timeTracker += wordDuration;
-      calculatedIndex = i + 1;
-    }
-    
-    // Ensure index doesn't exceed array length
-    if (calculatedIndex >= totalWords) {
-      calculatedIndex = totalWords - 1;
-    }
-    
-    // Update word if changed
-    if (calculatedIndex !== currentWordIndex) {
-      currentWordIndex = calculatedIndex;
-      wordElement.textContent = preloaderWords[currentWordIndex];
-    }
-    
-    // Update progress bar
-    const progressPercentage = Math.min((elapsedTime / totalPreloaderDuration) * 100, 99);
-    progressBarElement.style.width = progressPercentage + '%';
-    percentageElement.textContent = Math.floor(progressPercentage) + '%';
+  if (!preloaderElement) {
+    createPreloader();
+    preloaderElement = document.getElementById('preloader');
   }
   
-  const startTime = Date.now();
+  // Reset state
+  preloaderState.isVisible = true;
+  preloaderState.isRemoving = false;
   
-  // Update state every 50ms for smooth animation
-  const updateInterval = setInterval(() => {
-    updatePreloaderState();
-  }, 50);
+  // Tampilkan preloader
+  preloaderElement.classList.remove('fade-out');
+  preloaderElement.style.display = 'flex';
 
   // Function to remove preloader smoothly
   function removePreloader() {
-    if (isRemoving) return;
-    isRemoving = true;
-    
-    clearInterval(updateInterval);
-    
-    // Remove event listeners
-    document.removeEventListener('scroll', scrollListener);
-    document.removeEventListener('wheel', scrollListener);
-    document.removeEventListener('touchmove', scrollListener);
-    
-    // Add fade-out class with slide-up animation
+    if (preloaderState.isRemoving) return;
+    preloaderState.isRemoving = true;
+    preloaderState.isVisible = false;
+
     preloaderElement.classList.add('fade-out');
-    
-    // Remove from DOM after animation completes
+
     setTimeout(() => {
       if (preloaderElement && preloaderElement.parentNode) {
-        preloaderElement.remove();
+        preloaderElement.style.display = 'none';
       }
     }, 600);
   }
 
-  // Handle user scroll to stop preloader early
-  function handleUserScroll() {
-    if (!hasUserInteracted) {
-      hasUserInteracted = true;
-      // Immediately remove preloader on scroll
+  // Auto-remove after 3 seconds
+  preloaderState.hideTimeout = setTimeout(() => {
+    if (!preloaderState.isRemoving && preloaderState.isVisible) {
       removePreloader();
     }
-  }
+  }, 3000);
 
-  // Add scroll event listeners to detect any user interaction
-  const scrollListener = (e) => {
-    // Only trigger if scrollbar actually moved
-    if (window.scrollY > 0 || window.pageYOffset > 0) {
-      handleUserScroll();
-      document.removeEventListener('scroll', scrollListener);
-      document.removeEventListener('wheel', scrollListener);
-      document.removeEventListener('touchmove', scrollListener);
+  // Remove when page fully loads
+  const onPageLoad = () => {
+    if (!preloaderState.isRemoving && preloaderState.isVisible) {
+      setTimeout(removePreloader, 300);
     }
   };
 
-  document.addEventListener('scroll', scrollListener);
-  document.addEventListener('wheel', scrollListener);
-  document.addEventListener('touchmove', scrollListener);
+  window.addEventListener('load', onPageLoad, { once: true });
 
-  // Auto-remove after preloader completes all words
+  // Fallback: Remove after max 5 seconds
   setTimeout(() => {
-    if (!isRemoving) {
+    if (!preloaderState.isRemoving && preloaderState.isVisible && preloaderElement && preloaderElement.parentNode) {
       removePreloader();
     }
-  }, totalPreloaderDuration + 500); // Add 500ms buffer to show last word
+  }, 5000);
+}
 
-  // Also remove when page fully loads (if faster than preloader duration)
-  window.addEventListener('load', () => {
-    if (!isRemoving && (Date.now() - startTime) > (totalPreloaderDuration + 500)) {
-      removePreloader();
+// Tunjukkan preloader saat halaman akan di-navigate
+function showPreloaderOnNavigation() {
+  // Tangkap link clicks
+  document.addEventListener('click', function(e) {
+    const link = e.target.closest('a');
+    
+    if (!link) return;
+    
+    const href = link.getAttribute('href');
+    
+    // Jangan tampilkan preloader untuk link eksternal
+    if (link.target === '_blank' || link.rel.includes('external')) {
+      return;
     }
-  }, { once: true });
+    
+    // Tampilkan preloader untuk semua link (termasuk anchor links #)
+    if (href && href !== '#') {
+      initPreloader();
+    }
+  }, true);
 
-  // Fallback: Remove after max 8 seconds
-  setTimeout(() => {
-    if (!isRemoving && preloaderElement && preloaderElement.parentNode) {
-      removePreloader();
+  // Tampilkan preloader saat form submit
+  document.addEventListener('submit', function(e) {
+    const form = e.target;
+    if (!form.target || form.target !== '_blank') {
+      initPreloader();
     }
-  }, 8000);
+  }, true);
+
+  // Tampilkan preloader saat back/forward browser
+  window.addEventListener('beforeunload', function() {
+    if (preloaderState.isVisible && !preloaderState.isRemoving) {
+      initPreloader();
+    }
+  });
+
+  // Handle browser back/forward
+  window.addEventListener('pageshow', function(event) {
+    if (event.persisted) {
+      // Page was restored from bfcache
+      initPreloader();
+      // Hapus preloader setelah halaman fully loaded
+      setTimeout(() => {
+        const preloader = document.getElementById('preloader');
+        if (preloader && preloaderState.isVisible) {
+          preloader.classList.add('fade-out');
+          setTimeout(() => {
+            preloader.style.display = 'none';
+            preloaderState.isVisible = false;
+          }, 600);
+        }
+      }, 800);
+    }
+  });
+
+  // Handle F5 refresh
+  window.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'r') {
+      initPreloader();
+    }
+  });
 }
 
 // Start preloader immediately when script loads
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(initPreloader, 0);
+    setTimeout(() => {
+      initPreloader();
+      showPreloaderOnNavigation();
+    }, 0);
   });
 } else {
   // If DOM is already loaded, still initialize
   initPreloader();
+  showPreloaderOnNavigation();
 }

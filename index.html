@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Hobi Basket - NBA Passion</title>
+    <title>Basket Live</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=3.0">
     <script src="./js/preloader.js"></script>
 
 </head>
@@ -14,7 +14,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand fw-bold" href="#home">🏀 Hobi Basket</a>
+            <a class="navbar-brand fw-bold" href="#home">🏀 Basket-Live</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,89 +29,190 @@
         </div>
     </nav>
 
-    <!-- Hero Banner -->
-    <section id="home" class="hero-banner min-vh-100 d-flex align-items-center justify-content-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center" data-aos="fade-up">
-                    <h1 class="display-3 fw-bold mb-4">Selamat Datang di Dunia Basket</h1>
-                    <p class="lead fs-5 mb-4">Passion untuk NBA, Tekad untuk Bermain, Semangat Tak Tergoyahkan</p>
-                    <a href="#gallery" class="btn btn-primary btn-lg">Jelajahi Gallery</a>
+    <!-- Hero Banner - Minimalist & Futuristic -->
+    <section id="home" class="hero-banner min-vh-100 d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0d1628 100%); position: relative; overflow: hidden;">
+        <!-- Futuristic Background Elements -->
+        <div style="position: absolute; top: 10%; left: 5%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(31,58,147,0.15) 0%, transparent 70%); border-radius: 50%; filter: blur(40px);"></div>
+        <div style="position: absolute; bottom: 10%; right: 5%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,107,53,0.1) 0%, transparent 70%); border-radius: 50%; filter: blur(60px);"></div>
+        
+        <!-- Animated Grid Lines -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 50px 50px; opacity: 0.5; z-index: 1;"></div>
+        
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-12" data-aos="fade-up" data-aos-duration="1200">
+                    <!-- Main Content -->
+                    <div style="text-align: center; padding: 40px 0;">
+                        <!-- Accent Line Top -->
+                        <div style="width: 60px; height: 3px; background: linear-gradient(90deg, transparent, #ff6b35, transparent); margin: 0 auto 30px; border-radius: 2px;"></div>
+                        
+                        <!-- Main Heading -->
+                        <h1 style="font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; color: #fff; letter-spacing: -1px;">
+                            Basket
+                            <span style="background: linear-gradient(135deg, #ff6b35, #ff8a5b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block; margin-left: 12px;">Live</span>
+                        </h1>
+                        
+                        <!-- Tagline -->
+                        <p style="font-size: 1.1rem; color: #a0a8c8; font-weight: 400; letter-spacing: 2px; margin-bottom: 30px; text-transform: uppercase;">
+                            My Basketball Journey
+                        </p>
+                        
+                        <p style="font-size: 1.1rem; color: #a0a8c8; font-weight: 400; letter-spacing: 2px; margin-bottom: 30px; text-transform: uppercase;">
+                            by Fandiy
+                        </p>
+
+                        <!-- Accent Line Bottom -->
+                        <div style="width: 60px; height: 3px; background: linear-gradient(90deg, transparent, #1f3a93, transparent); margin: 0 auto 40px; border-radius: 2px;"></div>
+                        
+                        <!-- Description -->
+                        <p style="font-size: 1rem; color: #b8c1d9; max-width: 600px; margin: 0 auto 50px; line-height: 1.8; font-weight: 300;">
+                            Dedikasi, passion, dan semangat basket dalam setiap langkah perjalanan saya menuju kesuksesan.
+                        </p>
+                        
+                        <!-- CTA Button -->
+                        <a href="#gallery" style="display: inline-block; padding: 14px 40px; background: linear-gradient(135deg, #ff6b35, #ff8a5b); color: white; text-decoration: none; border-radius: 4px; font-weight: 600; letter-spacing: 1px; font-size: 0.9rem; transition: all 0.3s ease; text-transform: uppercase; border: 2px solid transparent;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 30px rgba(255,107,53,0.3)'; this.style.background='linear-gradient(135deg, #ff8a5b, #ff6b35)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.background='linear-gradient(135deg, #ff6b35, #ff8a5b)';">Jelajahi Gallery</a>
+                    </div>
                 </div>
             </div>
+            
+            <!-- Scroll Indicator -->
+            <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); text-align: center; z-index: 2;" data-aos="fade-in" data-aos-delay="600">
+                <p style="font-size: 0.8rem; color: #8892b0; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; font-weight: 600;">Scroll</p>
+                <div style="width: 2px; height: 20px; background: linear-gradient(180deg, #ff6b35, transparent); margin: 0 auto; animation: bounce 2s infinite;"></div>
+            </div>
         </div>
+        
+        <style>
+            @keyframes bounce {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(8px); }
+            }
+        </style>
     </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider">
+        <div class="divider-icon">🏀</div>
+    </div>
 
     <!-- About Section -->
-    <section id="about" class="about-section py-5">
-        <div class="container">
-            <h2 class="display-5 fw-bold mb-5 text-center" data-aos="fade-up">Tentang Hobi Basket Saya</h2>
+    <section id="about" class="about-section py-5" style="background: linear-gradient(135deg, rgba(31,58,147,0.05) 0%, rgba(255,107,53,0.05) 100%); position: relative; overflow: hidden;">
+        <!-- Decorative shapes -->
+        <div style="position: absolute; top: -50px; right: -50px; width: 300px; height: 300px; background: rgba(255,107,53,0.1); border-radius: 50%; z-index: 0;"></div>
+        <div style="position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; background: rgba(31,58,147,0.08); border-radius: 50%; z-index: 0;"></div>
+        
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <div style="display: inline-block; padding: 8px 16px; background: rgba(255,107,53,0.15); border-radius: 50px; margin-bottom: 12px;">
+                    <span style="color: #ff6b35; font-weight: 600; font-size: 0.9rem;">TENTANG SAYA</span>
+                </div>
+                <h2 class="display-5 fw-bold mb-3">Tentang Hobi Basket Saya</h2>
+            </div>
             <div class="row g-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-6">
-                    <div class="about-content">
-                        <h3 class="h4 fw-bold mb-3">Passion NBA</h3>
-                        <p>Saya adalah penggemar berat NBA dan basket secara umum. Setiap musim, saya selalu mengikuti perkembangan tim-tim terbaik, pemain-pemain bintang, dan strategi permainan yang menarik. Basket bukan hanya olahraga, tetapi seni dan sains yang memukau.</p>
+                    <div class="about-content p-4 rounded-3" style="background: rgba(255,255,255,0.8); border-left: 4px solid #ff6b35; border-top: 2px solid #ff6b35; border-right: 1px solid rgba(0,0,0,0.05); transition: all 0.3s ease; cursor: pointer; position: relative;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)'">
+                        <div style="position: absolute; top: -10px; right: 20px; font-size: 3rem; opacity: 0.1; z-index: 0;">🏀</div>
+                        <div style="font-size: 2.5rem; margin-bottom: 12px; position: relative; z-index: 1;">🏀</div>
+                        <h3 class="h4 fw-bold mb-3" style="color: #001f3f;">Passion NBA</h3>
+                        <p>Saya adalah penggemar berat NBA dan basket secara umum. Setiap musim, saya selalu mengikuti perkembangan tim-tim terbaik, pemain-pemain bintang, dan strategi permainan yang menarik. Basket bukan hanya olahraga, tetapi seni dan sains yang memukau. Dari teknik shooting yang presisi hingga defensi yang tangguh, setiap aspek permainan menarik perhatian saya.</p>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="about-content">
-                        <h3 class="h4 fw-bold mb-3">Pengalaman Bermain</h3>
-                        <p>Saya juga secara aktif bermain basket di komunitas lokal saya. Melalui pengalaman bermain, saya telah belajar tentang kerja sama tim, disiplin, dan ketekunan. Setiap pertandingan adalah kesempatan untuk berkembang dan melampaui batasan diri sendiri.</p>
+                    <div class="about-content p-4 rounded-3" style="background: rgba(255,255,255,0.8); border-left: 4px solid #1f3a93; border-top: 2px solid #1f3a93; border-right: 1px solid rgba(0,0,0,0.05); transition: all 0.3s ease; cursor: pointer; position: relative;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)'">
+                        <div style="position: absolute; top: -10px; right: 20px; font-size: 3rem; opacity: 0.1; z-index: 0;">💪</div>
+                        <div style="font-size: 2.5rem; margin-bottom: 12px; position: relative; z-index: 1;">💪</div>
+                        <h3 class="h4 fw-bold mb-3" style="color: #001f3f;">Pengalaman Bermain</h3>
+                        <p>Saya juga secara aktif bermain basket di komunitas lokal saya. Melalui pengalaman bermain, saya telah belajar tentang kerja sama tim, disiplin, dan ketekunan. Setiap pertandingan adalah kesempatan untuk berkembang dan melampaui batasan diri sendiri. Dari latihan rutin hingga pertandingan kompetitif, perjalanan ini telah mengajarkan saya nilai-nilai kehidupan yang berharga.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider style-2">
+        <div class="divider-icon">⭐</div>
+    </div>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="gallery-section py-5">
-        <div class="container">
-            <h2 class="display-5 fw-bold mb-5 text-center" data-aos="fade-up">Gallery Basket</h2>
+    <section id="gallery" class="gallery-section py-5" style="background: linear-gradient(135deg, rgba(31,58,147,0.03) 0%, rgba(255,107,53,0.03) 100%); position: relative; overflow: hidden;">
+        <!-- Decorative elements -->
+        <div style="position: absolute; top: 50%; right: 0; width: 200px; height: 200px; background: rgba(255,107,53,0.05); border-radius: 50%; transform: translateY(-50%); z-index: 0;"></div>
+        
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <div style="display: inline-block; padding: 8px 16px; background: rgba(31,58,147,0.15); border-radius: 50px; margin-bottom: 12px;">
+                    <span style="color: #1f3a93; font-weight: 600; font-size: 0.9rem;">KOLEKSI</span>
+                </div>
+                <h2 class="display-5 fw-bold mb-3">Gallery Basket</h2>
+                <div style="width: 60px; height: 4px; background: linear-gradient(90deg, #ff6b35, #1f3a93); margin: 0 auto 16px; border-radius: 2px;"></div>
+                <p class="lead" style="color: #666; max-width: 600px; margin: 0 auto;">Jelajahi koleksi momen-momen terbaik, pemain idola, tim favorit, dan pencapaian saya dalam perjalanan basket yang luar biasa ini.</p>
+            </div>
             <div class="row g-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-3 col-md-6">
-                    <div class="card gallery-card border-0">
-                        <img src="https://placehold.co/300x250/1f3a93/ffffff?text=NBA+Game" class="card-img-top" alt="NBA Game">
-                        <div class="card-body">
-                            <h5 class="card-title">NBA Game</h5>
-                            <p class="card-text">Pertandingan seru di NBA</p>
+                    <a href="player.html" class="card-link">
+                        <div class="card gallery-card border-0">
+                            <img src="https://placehold.co/300x250/1f3a93/ffffff?text=Stephen+Curry" class="card-img-top" alt="Pemain Favorit">
+                            <div class="card-body">
+                                <h5 class="card-title">Pemain Favorit</h5>
+                                <p class="card-text">Stephen Curry - Pemain revolusioner dengan kemampuan shooting terbaik sepanjang masa. Inovasi dalam three-point shooting dan gaya bermainnya telah mengubah basket modern selamanya.</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <div class="card gallery-card border-0">
-                        <img src="https://placehold.co/300x250/ff6b35/ffffff?text=Training+Session" class="card-img-top" alt="Training">
-                        <div class="card-body">
-                            <h5 class="card-title">Training Session</h5>
-                            <p class="card-text">Sesi latihan intensif</p>
+                    <a href="team.html" class="card-link">
+                        <div class="card gallery-card border-0">
+                            <img src="https://placehold.co/300x250/1f3a93/ffffff?text=Golden+State+Warriors" class="card-img-top" alt="Tim Favorit">
+                            <div class="card-body">
+                                <h5 class="card-title">Tim Favorit</h5>
+                                <p class="card-text">Golden State Warriors - Tim revolusioner dengan filosofi bermain "small ball" dan fokus three-point shooting. Inovasi taktis mereka telah mengubah cara basket modern dimainkan disetiap gamenya.</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <div class="card gallery-card border-0">
-                        <img src="https://placehold.co/300x250/004d00/ffffff?text=Team+Victory" class="card-img-top" alt="Victory">
-                        <div class="card-body">
-                            <h5 class="card-title">Team Victory</h5>
-                            <p class="card-text">Kemenangan tim</p>
+                    <a href="photo.html" class="card-link">
+                        <div class="card gallery-card border-0">
+                            <img src="https://placehold.co/300x250/1f3a93/ffffff?text=Foto+Personal" class="card-img-top" alt="Foto Saya">
+                            <div class="card-body">
+                                <h5 class="card-title">Foto Personal</h5>
+                                <p class="card-text">Momen pribadi saya bermain basket dengan penuh semangat dan dedikasi. Setiap pertandingan adalah kesempatan untuk memberikan yang terbaik dan tumbuh sebagai pemain yang lebih baik.</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <div class="card gallery-card border-0">
-                        <img src="https://placehold.co/300x250/cc0000/ffffff?text=Championship" class="card-img-top" alt="Championship">
-                        <div class="card-body">
-                            <h5 class="card-title">Championship</h5>
-                            <p class="card-text">Mimpi untuk Juara</p>
+                    <a href="achievement.html" class="card-link">
+                        <div class="card gallery-card border-0">
+                            <img src="https://placehold.co/300x250/1f3a93/ffffff?text=Pencapaian" class="card-img-top" alt="Pencapaian">
+                            <div class="card-body">
+                                <h5 class="card-title">Pencapaian</h5>
+                                <p class="card-text">Prestasi dan momen-momen berkesan dari perjalanan basket saya. Setiap pencapaian adalah hasil dari kerja keras, konsistensi, dan dukungan dari tim serta orang-orang terdekat berkat itu saya bisa merasakan hal ini.</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Section Divider -->
+    <div class="section-divider style-3"></div>
+
     <!-- Contact Section -->
-    <section id="contact" class="contact-section py-5">
-        <div class="container">
-            <h2 class="display-5 fw-bold mb-5 text-center" data-aos="fade-up">Hubungi Saya</h2>
+    <section id="contact" class="contact-section py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, rgba(31,58,147,0.02) 100%); position: relative; overflow: hidden;">
+        <!-- Decorative shapes -->
+        <div style="position: absolute; top: -50px; left: -50px; width: 250px; height: 250px; background: rgba(31,58,147,0.08); border-radius: 50%; z-index: 0;"></div>
+        
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <div style="display: inline-block; padding: 8px 16px; background: rgba(255,107,53,0.15); border-radius: 50px; margin-bottom: 12px;">
+                    <span style="color: #ff6b35; font-weight: 600; font-size: 0.9rem;">HUBUNGI</span>
+                </div>
+                <h2 class="display-5 fw-bold mb-3">Hubungi Saya</h2>
+                <div style="width: 60px; height: 4px; background: linear-gradient(90deg, #1f3a93, #ff6b35); margin: 0 auto 24px; border-radius: 2px;"></div>
+            </div>
             <div class="row g-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-8 offset-lg-2">
                     <form id="contactForm" class="contact-form" novalidate>
@@ -119,30 +220,27 @@
                             <label for="name" class="form-label">Nama Lengkap</label>
                             <input type="text" class="form-control" id="name" name="name" required>
                             <div class="invalid-feedback">
-                                Nama harus diisi.
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email" name="email" required>
                             <div class="invalid-feedback">
-                                Email tidak valid.
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">Pesan</label>
                             <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
                             <div class="invalid-feedback">
-                                Pesan harus diisi.
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary btn-lg w-100">Kirim Pesan</button>
                     </form>
                     <div class="mt-5 pt-4 border-top">
                         <h4 class="h5 fw-bold mb-3">Kontak Alternatif</h4>
-                        <p class="mb-2"><strong>Email:</strong> hobi.basket@email.com</p>
-                        <p class="mb-2"><strong>Telepon:</strong> +62 812-3456-7890</p>
-                        <p><strong>Lokasi:</strong> Jakarta, Indonesia</p>
+                        <p class="mb-2"><strong>Email:</strong> arfandisatria06@email.com</p>
+                        <p class="mb-2"><strong>Telepon:</strong> +62 8122-8235-847</p>
+                        <p><strong>Lokasi:</strong> Yogyakarta, Indonesia</p>
                     </div>
                 </div>
             </div>
