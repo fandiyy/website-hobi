@@ -1,0 +1,390 @@
+/* ===========================
+   WEBSITE HOBI BASKET - CSS
+   NBA-Inspired Design
+   =========================== */
+
+/* Color Variables */
+:root {
+    --primary-dark: #001F3F;
+    --primary-orange: #FF6600;
+    --light-bg: #F5F5F5;
+    --white: #FFFFFF;
+    --dark: #2C3E50;
+    --secondary-gray: #9A9A9A;
+    --transition: all 0.3s ease;
+}
+
+/* General Styling */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--dark);
+    background-color: var(--white);
+}
+
+/* Navbar Custom Styling */
+.navbar {
+    background-color: var(--primary-dark) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: var(--white) !important;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.navbar-brand:hover {
+    color: var(--primary-orange) !important;
+}
+
+.nav-link {
+    margin: 0 0.5rem;
+    font-weight: 500;
+    transition: var(--transition);
+    color: var(--white) !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-orange) !important;
+}
+
+/* Hero Banner Section */
+.hero-banner {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #0D1B2A 100%);
+    color: var(--white);
+    padding-top: 80px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-banner h1 {
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+}
+
+.hero-banner p {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.hero-banner .btn-primary {
+    background-color: var(--primary-orange);
+    border-color: var(--primary-orange);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.hero-banner .btn-primary:hover {
+    background-color: #E55A00;
+    border-color: #E55A00;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(255, 102, 0, 0.3);
+}
+
+/* About Section */
+.about-section {
+    background-color: var(--light-bg);
+    padding: 5rem 0;
+}
+
+.about-section h2 {
+    color: var(--primary-dark);
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+
+.about-content {
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+}
+
+.about-content h3 {
+    color: var(--primary-orange);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.about-content p {
+    color: var(--dark);
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+.about-content:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Gallery Section */
+.gallery-section {
+    background-color: var(--white);
+    padding: 5rem 0;
+}
+
+.gallery-section h2 {
+    color: var(--primary-dark);
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+
+.gallery-card {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    height: 100%;
+    border: none;
+}
+
+.gallery-card img {
+    height: 250px;
+    object-fit: cover;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.gallery-card .card-body {
+    padding: 1.5rem;
+    background-color: var(--white);
+}
+
+.gallery-card .card-body h5 {
+    color: var(--primary-dark);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.gallery-card .card-body p {
+    color: var(--secondary-gray);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.gallery-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--light-bg);
+    padding: 5rem 0;
+}
+
+.contact-section h2 {
+    color: var(--primary-dark);
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+
+.contact-form {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form .form-label {
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+}
+
+.contact-form .form-control {
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.contact-form .form-control:focus {
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 0 0.2rem rgba(255, 102, 0, 0.15);
+    background-color: var(--white);
+}
+
+.contact-form .form-control.is-invalid {
+    border-color: #DC3545;
+}
+
+.contact-form .btn {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    font-weight: 600;
+    padding: 0.875rem;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.contact-form .btn:hover {
+    background-color: #0D3055;
+    border-color: #0D3055;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 31, 63, 0.3);
+}
+
+.contact-section h4 {
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+.contact-section p {
+    color: var(--dark);
+    font-weight: 400;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}
+
+.footer p {
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0;
+}
+
+.footer a {
+    text-decoration: none;
+    transition: var(--transition);
+    font-weight: 500;
+    color: var(--white) !important;
+}
+
+.footer a:hover {
+    color: var(--primary-orange) !important;
+}
+
+.footer i {
+    margin-right: 0.5rem;
+}
+
+/* Form Validation */
+.invalid-feedback {
+    display: block;
+    color: #DC3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* AOS Animations */
+[data-aos] {
+    opacity: 0;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-orange);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #E55A00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .display-3 {
+        font-size: 2rem;
+    }
+    
+    .display-5 {
+        font-size: 1.75rem;
+    }
+    
+    .hero-banner {
+        min-height: 80vh;
+    }
+    
+    .nav-link {
+        margin: 0.25rem 0;
+    }
+    
+    .navbar {
+        padding: 0.75rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .display-3 {
+        font-size: 1.75rem;
+    }
+    
+    .display-5 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-banner h1 {
+        font-size: 1.75rem;
+    }
+    
+    .gallery-card img {
+        height: 200px;
+    }
+    
+    .footer {
+        text-align: center;
+    }
+    
+    .footer .col-md-6 {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Utility Classes */
+.border-0 {
+    border: none !important;
+}
+
+/* Card Styling */
+.card {
+    border: none !important;
+    transition: var(--transition);
+}
+
+/* Link Styling */
+a {
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background-color: #0D3055;
+    border-color: #0D3055;
+}

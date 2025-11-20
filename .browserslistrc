@@ -1,0 +1,5 @@
+# Browserslist configuration
+last 2 versions
+> 2%
+not dead
+not ie 11
